@@ -24,10 +24,6 @@ class Deck
   end
 
   def count
-    num_cards = 0
-    until cards[num_cards].nil?
-      num_cards += 1
-    end
-    return num_cards
+    return cards.size
   end
 end
