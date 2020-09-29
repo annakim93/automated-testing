@@ -1,6 +1,7 @@
 
 # card.rb
 VALID_SUITS = [:hearts, :spades, :clubs, :diamonds]
+FACE_CARDS = { 1 => 'Ace', 11 => 'Jack', 12 => 'Queen', 13 => 'King' }
 
 class Card
   attr_reader :value, :suit
@@ -19,7 +20,11 @@ class Card
   end
 
   def to_s
-    return "#{value} of #{suit.to_s}"
+    if FACE_CARDS[value]
+      return "#{FACE_CARDS[value]} of #{suit.to_s}"
+    else
+      return "#{value} of #{suit.to_s}"
+    end
   end
 
 end
