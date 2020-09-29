@@ -6,10 +6,10 @@ describe Deck do
   # What should you test?
     # 1.  Expected Behavior
     # 2.  Edge cases
+  let (:deck) {
+    Deck.new
+  }
   describe "creates a Deck instance" do
-    let (:deck) {
-      Deck.new
-    }
     it "is a Deck object" do
       expect(deck).must_be_instance_of Deck
     end
@@ -40,19 +40,18 @@ describe Deck do
 
   describe "Reader methods" do
     it "Can retrieve cards in deck using '.cards'" do
-      expect(Deck.new).must_respond_to :cards
+      expect(deck).must_respond_to :cards
     end
   end
 
   describe "testing count" do
     it "Returns the correct number of cards in a standard deck" do
-      expect(Deck.new.count).must_equal 52
+      expect(deck.count).must_equal 52
     end
   end
 
   describe "testing draw" do
     it "draws a card that exists in the deck" do
-      deck = Deck.new
       expect(
           deck.cards.include?(deck.draw)
       ).must_equal true
@@ -61,7 +60,6 @@ describe Deck do
 
   describe "testing shuffle" do
     it "shuffles the deck such that the card order is different" do
-      deck = Deck.new
       temp = deck.cards
       deck.shuffle
 
