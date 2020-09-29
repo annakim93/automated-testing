@@ -1,13 +1,13 @@
 
 # card.rb
-VALID_SUITS = [:hearts, :spades, :clubs, :diamonds]
+STANDARD_SUITS = [:hearts, :spades, :clubs, :diamonds]
 FACE_CARDS = { 1 => 'Ace', 11 => 'Jack', 12 => 'Queen', 13 => 'King' }
 
 class Card
   attr_reader :value, :suit
 
   def initialize(value, suit)
-    unless VALID_SUITS.include?(suit)
+    unless STANDARD_SUITS.include?(suit)
       raise ArgumentError, "#{suit} is not a valid suit."
     end
 
